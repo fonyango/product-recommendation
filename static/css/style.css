@@ -1,0 +1,105 @@
+/* Reset default browser styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Set a default font family */
+  body {
+    font-family: 'PT Sans', sans-serif;
+  }
+  
+  /* Style the header section */
+  .header-container {
+    text-align: center;
+    margin-top: 2rem;
+  }
+  .header-container h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+  }
+  .header-container h3 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  .header-container hr {
+    margin: 1rem auto;
+    width: 50%;
+    border: none;
+    height: 2px;
+    background-color: #000;
+  }
+  
+  /* Style the form section */
+  .form-input {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+  }
+  .form-input form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .form-input input[type="text"], .form-input select {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    width: 100%;
+    font-size: 1rem;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+  }
+  .form-input button[type="submit"] {
+    padding: 0.5rem 2rem;
+    font-size: 1rem;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 1rem;
+  }
+  
+  /* Style the flowers section */
+.flowers {
+    width: 350px;
+    margin: auto;
+  }
+ 
+  .flowers h3{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .flowers ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .flowers li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .flowers h4 {
+    margin: 0;
+  }
+  
+  .flowers p {
+    margin: 0;
+    font-weight: bold;
+  }
+  /* Style the main container */
+  .main-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  

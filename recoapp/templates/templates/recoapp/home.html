@@ -1,0 +1,57 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>recoapp</title>
+    <link
+    href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="main-container">
+        <div class="header-container">
+            <h1>Flower Recommendation System</h1>
+            <hr></hr>
+            <h3>Welcome to our Flower Store</h3>
+            <p>Enter your User ID</p>        
+        </div>
+        <div class="form-input">
+            <form method="POST" action="{% url 'purchase' %}">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Submit</button>
+            </form>      
+        </div>
+        <div class="flowers">
+            <ul>
+              {% for flower in flowers %}
+                <li>
+                  <h4>{{ flower.flower_name }}</h4>
+                  <p>US$ {{ flower.price }}</p>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+    </div>
+    <script src="https://kit.fontawesome.com/f0b8a24555.js" crossorigin="anonymous"></script>
+    <script>
+        window.addEventListener('load', function() {
+            // Check if flower data is available
+            const flowers = document.querySelectorAll('.flowers li');
+            if (flowers.length > 0) {
+                // Flower data is available, show text
+                const text = document.createElement('h3');
+                text.textContent = 'You may be interested in the following flowers';
+                const flowersDiv = document.querySelector('.flowers');
+                flowersDiv.insertBefore(text, flowersDiv.firstChild);
+            }
+        });
+    </script>
+</body>
+</html>
