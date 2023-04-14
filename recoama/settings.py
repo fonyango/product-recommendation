@@ -17,7 +17,7 @@ SECRET_KEY = config('DJANGO_SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG_STATUS', cast=bool)
 
-ALLOWED_HOSTS = ['reco-app.herokuapp.com']
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -51,6 +51,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'recoama.urls'
+
+CSRF_TRUSTED_ORIGINS = ['https://reco-app.herokuapp.com/']
 
 TEMPLATES = [
     {
