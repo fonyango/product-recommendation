@@ -75,6 +75,7 @@ def assign_flower_names(user_id, product_ids):
     # If the user ID is already in the dictionary, return the existing mapping
 
     if user_id in user_flower_dict:
+        print(user_flower_dict[user_id])
         return user_flower_dict[user_id]
     
     # Choose random unique flower names for the product IDs
@@ -82,7 +83,25 @@ def assign_flower_names(user_id, product_ids):
     
     product_flower_dict = dict(zip(product_ids, flower_names))
     
-    # Store the mapping in the user_flower_dict dictionary
-    user_flower_dict[user_id] = product_flower_dict
-    
-    return product_flower_dict
+    # choose random prices
+    price_list = [random.randint(100, 250) for _ in range(5)]
+
+    flower_dict = {
+        "product_id":list(product_flower_dict.keys()),
+        "flower_name":list(product_flower_dict.values()),
+        "price":price_list
+    }
+
+    result = []
+    for i in range(len(flower_dict['product_id'])):
+        item = {
+            'product_id': flower_dict['product_id'][i],
+            'flower_name': flower_dict['flower_name'][i],
+            'price': flower_dict['price'][i]
+        }
+        result.append(item)
+
+    # Store the result in the user_flower_dict dictionary
+    user_flower_dict[user_id] = result
+
+    return result

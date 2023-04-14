@@ -1,0 +1,1 @@
+web: gunicorn recoama.wsgi –log-file -
