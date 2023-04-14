@@ -34,7 +34,7 @@ INSTALLED_APPS = [
 
     # third party apps
     'rest_framework',
-    'django-cors-headers',
+    'corsheaders',
 ]
 
 
