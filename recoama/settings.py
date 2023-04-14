@@ -34,11 +34,13 @@ INSTALLED_APPS = [
 
     # third party apps
     'rest_framework',
+    'django-cors-headers',
 ]
 
 
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -52,7 +54,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'recoama.urls'
 
-CSRF_TRUSTED_ORIGINS = ['https://reco-app.herokuapp.com/']
+CSRF_TRUSTED_ORIGINS = ['*']
 
 TEMPLATES = [
     {

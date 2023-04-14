@@ -1,9 +1,13 @@
 from rest_framework.response import Response
-from rest_framework import viewsets, status
+from rest_framework import status
+from django.template import RequestContext
+from django.views.decorators.csrf import csrf_exempt
 from .forms import MyForm
 from django.shortcuts import render
 from .data import get_popular_products, assign_flower_names
 
+
+@csrf_exempt
 def purchase(request):
     """
     returns number of all policies and their categories based on policy type
