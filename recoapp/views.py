@@ -10,7 +10,7 @@ from .data import get_popular_products, assign_flower_names
 @csrf_exempt
 def purchase(request):
     """
-    returns number of all policies and their categories based on policy type
+    returns 5 recommended flower types
     """
     try:
         if request.method=='POST':
