@@ -15,6 +15,7 @@ def purchase(request):
     try:
         if request.method=='POST':
             form = MyForm(request.POST)
+            
             if form.is_valid():
                 user_id = form.cleaned_data['user_id']
 
